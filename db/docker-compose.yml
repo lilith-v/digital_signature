@@ -1,0 +1,18 @@
+services: 
+    postgres:
+      build:
+        dockerfile: Dockerfile
+      healthcheck:
+        test: [ "CMD", "pg_isready", "-q", "-d", "rsa_secure_numbers", "-U", "postgres" ]
+        timeout: 45s
+        interval: 10s
+        retries: 10
+      restart: always
+      environment: 
+          - POSTGRES_USER=postgres
+          - POSTGRES_PASSWORD=password
+          - POSTGRES_DATABASES=rsa_secure_numbers 
+      ports: 
+          - "5434:5432"
+ 
+
