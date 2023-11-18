@@ -5,7 +5,7 @@ import psycopg2
 from datetime import datetime
 
 
-openai.api_key="sk-5MZeWv2NZzOpFq***xXMWWeNZy"
+openai.api_key=YOUR_KEY
 
 
 QUESTION="tell me interesting 1 fact about RSA algorithm each fact in maximum 30 words"
